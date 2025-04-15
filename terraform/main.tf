@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
 # Credentials only needs to be set if you do not have the GOOGLE_APPLICATION_CREDENTIALS set
-  credentials = "key/de-zoomcamp-2025-gcp.json"
+  credentials = "/workspaces/de-zoomcamp-2025-project/key/de-zoomcamp-2025-gcp.json"
   project = "folkloric-stone-449913-n7"
   region  = "us-central1"
 }
@@ -42,23 +42,4 @@ resource "google_bigquery_dataset" "dataset" {
   dataset_id = "bikeshare_dataset"
   project    = "folkloric-stone-449913-n7"
   location   = "US"
-}
-
-resource "google_compute_instance" "vm" {
-  name         = "de-zoomcamp-vm"
-  machine_type = "n1-standard-1"
-  zone         = "us-central1-a"
-
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-11"
-      size = "30"
-    }
-  }
-
-  network_interface {
-    network = "default"
-    access_config {}
-  }
-  
 }
