@@ -51,7 +51,8 @@ resource "google_compute_instance" "vm" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
+      image = "debian-cloud/debian-11"
+      size = "30"
     }
   }
 
