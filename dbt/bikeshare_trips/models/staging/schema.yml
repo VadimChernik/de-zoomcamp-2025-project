@@ -1,0 +1,11 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DATABASE', 'folkloric-stone-449913-n7') }}"
+    schema: "{{ env_var('DBT_SCHEMA', 'bikeshare_dataset') }}"
+    tables:
+      - name: bikeshare_trips
+      - name: bikeshare_regions
+      - name: bikeshare_stations
