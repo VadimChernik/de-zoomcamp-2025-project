@@ -33,12 +33,12 @@ select
     tripdata.start_timestamp,
     tripdata.end_timestamp,
 
-    dayofweek,
-    month,
-    quarter,
-    year,
-    year_quarter,
-    year_month,
+    dates.dayofweek,
+    dates.month,
+    dates.quarter,
+    dates.year,
+    dates.year_quarter,
+    dates.year_month,
 
     tripdata.start_station_id,
     tripdata.start_station_name,
@@ -53,6 +53,9 @@ select
     tripdata.subscriber_type,
     tripdata.member_birth_year,
     tripdata.member_gender,
+    case 
+        when tripdata.member_birth_year is not null then dates.year - tripdata.member_birth_year
+    end member_age,
 
     tripdata.duration_sec
 
