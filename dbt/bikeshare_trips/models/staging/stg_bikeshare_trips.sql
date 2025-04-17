@@ -29,10 +29,7 @@ select
     duration_sec,
 
     -- member info
-    case 
-        when subscriber_type = 'nan' then c_subscription_type
-        else subscriber_type
-    end subscriber_type,
+    {{ get_subscriber_type("subscriber_type") }} subscriber_type,
     member_birth_year,
     member_gender
 
