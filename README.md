@@ -18,8 +18,6 @@ This project focuses on building an end-to-end data pipeline to analyze bike rid
 * **Data Transformation:** dbt Core
 * **Data Visualisation:** Looker Studio
 
-**Diagram:**
-
 ## Dashboard
 **Link:** [Looker Studio](https://lookerstudio.google.com/reporting/c96d69bb-24d7-42db-bd1e-ef383b318c3d)
 
